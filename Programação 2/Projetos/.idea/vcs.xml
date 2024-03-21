@@ -1,6 +1,15 @@
+<<<<<<< HEAD:Programação II/Projetos/.idea/vcs.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/../.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+  </component>
+=======
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
   </component>
+>>>>>>> 47342b3116e2cbf083d59b5f4e2e637bec81b08c:Programação 2/Projetos/.idea/vcs.xml
 </project>
