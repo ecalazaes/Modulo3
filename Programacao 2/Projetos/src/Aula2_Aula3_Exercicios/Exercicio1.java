@@ -11,10 +11,9 @@ public class Exercicio1 {
 
         for (int i = 0; i < 3; i++) {
             System.out.print("Digite uma palavra: ");
-            String word = sc.nextLine();
-            listaDePalavras.add(word);
+            String palavra = sc.nextLine();
+            listaDePalavras.add(palavra);
         }
-
         System.out.println("As palavras são: " + listaDePalavras);
     }
 }
