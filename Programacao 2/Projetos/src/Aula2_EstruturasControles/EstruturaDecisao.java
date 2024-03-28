@@ -3,6 +3,7 @@ package aula2_EstruturasControles;
 public class EstruturaDecisao {
     public static void main(String[] args) {
         int grade = 92;
+
         if (grade >= 90) {
             System.out.println("Conceito: Ótimo!");
         } else if (grade < 90 && grade >= 70){
