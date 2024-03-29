@@ -11,6 +11,6 @@ public class TesteFuncionario {
         System.out.println("Salario: " + f1.salario);
         f1.bonificacao(100);
 
-        System.out.printf("Salario: R$ %.2f" ,f1.salario);
+        System.out.printf("Salario: R$ %.2f", f1.salario);
     }
 }
