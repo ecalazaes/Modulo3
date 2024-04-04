@@ -1,4 +1,4 @@
-package Aula2_IO_Scanner;
+package aula2_IO_Scanner;
 
 import java.util.Scanner;
 

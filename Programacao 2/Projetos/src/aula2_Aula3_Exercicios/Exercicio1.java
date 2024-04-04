@@ -1,6 +1,5 @@
-package Aula2_Aula3_Exercicios;
+package aula2_Aula3_Exercicios;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 

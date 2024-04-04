@@ -1,4 +1,4 @@
-package Aula3_SistemaBancario;
+package aula3_SistemaBancario;
 
 public class TestaConta3 {
     public static void main(String[] args) {

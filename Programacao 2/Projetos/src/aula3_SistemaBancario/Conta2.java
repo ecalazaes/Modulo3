@@ -1,16 +1,17 @@
-package Aula3_SistemaBancario;
+package aula3_SistemaBancario;
 
 public class Conta2 {
     int numero;
-    Cliente cliente;
-    double saldo;
-    double limite;
+    public double saldo;
+    public double limite;
 
-    public Conta2( ) {
+    public Cliente cliente;
+
+    public Conta2() {
         cliente = new Cliente();
     }
 
-    boolean sacar(double valor) {
+      public boolean sacar(double valor) {
         if ((this.saldo + this.limite) < valor) {
             return false;
         } else {
@@ -18,8 +19,8 @@ public class Conta2 {
             return true;
         }
     }
-    void depositar(double valor) {
+
+    public void depositar(double valor) {
         this.saldo += valor;
     }
-
 }

@@ -1,4 +1,4 @@
-package Aula3_Arrays_InputComJanelas;
+package aula3_Arrays_InputComJanelas;
 
 public class ArrayDeArray {
     public static void main(String[] args) {

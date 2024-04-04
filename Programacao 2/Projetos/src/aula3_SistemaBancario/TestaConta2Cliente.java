@@ -1,6 +1,7 @@
-package Aula3_SistemaBancario;
+package aula3_SistemaBancario;
 
 public class TestaConta2Cliente {
+
     public static void main(String[] args) {
         Conta2 c2 = new Conta2();
         c2.saldo = 100;
