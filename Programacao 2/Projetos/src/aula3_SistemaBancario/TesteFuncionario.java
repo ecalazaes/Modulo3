@@ -9,7 +9,7 @@ public class TesteFuncionario {
         f1.setStatus("ativo");
 
         System.out.println("Salario: " + f1.getSalario());
-        f1.bonificacao(100);
+        f1.getBonus();
 
         System.out.printf("Salario: R$ %.2f", f1.getSalario());
 
