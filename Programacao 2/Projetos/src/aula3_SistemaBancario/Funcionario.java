@@ -60,6 +60,6 @@ public class Funcionario {
     }
 
     public double getBonus(){
-        return this.salario * 0.05;
+        return this.salario * 0.10;
     }
 }
