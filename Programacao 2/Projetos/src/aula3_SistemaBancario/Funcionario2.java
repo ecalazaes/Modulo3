@@ -1,6 +1,6 @@
 package aula3_SistemaBancario;
 
-public class Funcionario {
+public abstract class Funcionario2 {
     protected String nome;
     protected String cpf;
     protected String departamento;
@@ -8,8 +8,10 @@ public class Funcionario {
     protected double salario;
     protected String status;
 
-    public Funcionario() {
+    public Funcionario2() {
     }
+
+    abstract double getBonus();
 
     public String getNome() {
         return nome;
@@ -59,7 +61,4 @@ public class Funcionario {
         this.status = status;
     }
 
-    public double getBonus(){
-        return this.salario * 0.10;
-    }
 }

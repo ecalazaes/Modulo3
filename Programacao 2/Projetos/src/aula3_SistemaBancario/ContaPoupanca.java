@@ -1,6 +1,6 @@
 package aula3_SistemaBancario;
 
-public class ContaPoupanca extends Conta2 {
+public class ContaPoupanca extends Conta3 {
 
 
     public ContaPoupanca(double saldo) {
