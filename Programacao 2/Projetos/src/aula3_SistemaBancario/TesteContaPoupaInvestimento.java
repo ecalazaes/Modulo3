@@ -11,7 +11,7 @@ public class TesteContaPoupaInvestimento {
         System.out.print("Informe o saldo para simulação de lucro na poupança: ");
         double saldoPoupanca = sc.nextDouble();
 
-        System.out.print("Informe o saldo para simulação de lucro na Investimento: ");
+        System.out.print("Informe o saldo para simulação de lucro no Investimento: ");
         double saldoInvestimento = sc.nextDouble();
 
         ContaPoupanca cp = new ContaPoupanca(saldoPoupanca);
