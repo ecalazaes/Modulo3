@@ -645,6 +645,10 @@ video {
   height: 1.5rem;
 }
 
+.h-16 {
+  height: 4rem;
+}
+
 .w-1\/6 {
   width: 16.666667%;
 }
@@ -909,6 +913,10 @@ video {
 
   .sm\:grid {
     display: grid;
+  }
+
+  .sm\:h-14 {
+    height: 3.5rem;
   }
 
   .sm\:w-1\/2 {
