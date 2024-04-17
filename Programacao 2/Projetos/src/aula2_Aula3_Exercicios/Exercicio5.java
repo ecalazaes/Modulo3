@@ -10,38 +10,17 @@ public class Exercicio5 {
         int op = Integer.parseInt(sc.nextLine());
 
         switch (op) {
-            case 1:
-                System.out.println("O número "+op+" por extenso é UM !");
-                break;
-            case 2:
-                System.out.println("O número "+op+" por extenso é DOIS !");
-                break;
-            case 3:
-                System.out.println("O número "+op+" por extenso é TRÊS !");
-                break;
-            case 4:
-                System.out.println("O número "+op+" por extenso é QUARTO !");
-                break;
-            case 5:
-                System.out.println("O número "+op+" por extenso é CINCO !");
-                break;
-            case 6:
-                System.out.println("O número "+op+" por extenso é SEIS !");
-                break;
-            case 7:
-                System.out.println("O número "+op+" por extenso é SETE !");
-                break;
-            case 8:
-                System.out.println("O número "+op+" por extenso é OITO !");
-                break;
-            case 9:
-                System.out.println("O número "+op+" por extenso é NOVE !");
-                break;
-            case 10:
-                System.out.println("O número "+op+" por extenso é DEZ !");
-                break;
-            default:
-                System.out.println("Número inválido");
+            case 1 -> System.out.println("O número "+op+" por extenso é UM !");
+            case 2 -> System.out.println("O número "+op+" por extenso é DOIS !");
+            case 3 -> System.out.println("O número "+op+" por extenso é TRÊS !");
+            case 4 -> System.out.println("O número "+op+" por extenso é QUARTO !");
+            case 5 -> System.out.println("O número "+op+" por extenso é CINCO !");
+            case 6 -> System.out.println("O número "+op+" por extenso é SEIS !");
+            case 7 -> System.out.println("O número "+op+" por extenso é SETE !");
+            case 8 -> System.out.println("O número "+op+" por extenso é OITO !");
+            case 9 -> System.out.println("O número "+op+" por extenso é NOVE !");
+            case 10 -> System.out.println("O número "+op+" por extenso é DEZ !");
+            default -> System.out.println("Número inválido");
         }
 
         if (op == 1) {

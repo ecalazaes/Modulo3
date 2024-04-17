@@ -1,11 +1,12 @@
 package aula2_Aula3_Exercicios;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Exercicio9 {
     public static void main(String[] args) {
-        ArrayList<Integer> listaDeNumeros2 = new ArrayList<Integer>();
+        List<Integer> listaDeNumeros2 = new ArrayList<Integer>();
 
         for (int i = 0; i < 10; i++) {
             Scanner sc = new Scanner(System.in);

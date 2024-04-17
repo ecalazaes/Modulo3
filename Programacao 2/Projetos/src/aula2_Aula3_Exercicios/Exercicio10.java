@@ -1,5 +1,7 @@
 package aula2_Aula3_Exercicios;
 
+import java.util.Map;
+
 public class Exercicio10 {
     public static void main(String[] args) {
         // Criar um array bidimensional de strings para armazenar nomes e telefones
@@ -8,6 +10,8 @@ public class Exercicio10 {
                 {"Daniele", "983085378"},
                 {"Ronaldo", "996637709"}
         };
+
+
 
         // Iterar sobre os registros e imprimir os nomes e telefones
         for (int i = 0; i < registros.length; i++) {
