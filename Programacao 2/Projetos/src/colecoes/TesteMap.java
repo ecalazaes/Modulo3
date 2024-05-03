@@ -21,7 +21,7 @@ public class TesteMap {
         mapaContas.put("4567", c2);
         mapaContas.put("4433", c3);
 
-        Conta contaRecuperada = mapaContas.get(c1);
-        System.out.println(contaRecuperada.);
+        Conta contaRecuperada = mapaContas.get("1234");
+        System.out.println(contaRecuperada.saldo);
     }
 }
