@@ -1,16 +1,19 @@
 package aula3_SistemaBancario;
 
 public class Conta {
-    private Integer numero;
-    private String nome;
-    private Double saldo;
-    private Double limite;
+    private int numero;
+    public String nome;
+    public double saldo;
+    private double limite;
 
-    public Integer getNumero() {
+    public Conta() {
+    }
+
+    public int getNumero() {
         return numero;
     }
 
-    public void setNumero(Integer numero) {
+    public void setNumero(int numero) {
         this.numero = numero;
     }
 
@@ -22,7 +25,7 @@ public class Conta {
         this.nome = nome;
     }
 
-    public Double getSaldo() {
+    public double getSaldo() {
         return saldo;
     }
 
@@ -31,11 +34,11 @@ public class Conta {
     }
 
 
-    public Double getLimite() {
+    public double getLimite() {
         return limite;
     }
 
-    public void setLimite(Double limite) {
+    public void setLimite(double limite) {
         this.limite = limite;
     }
 
