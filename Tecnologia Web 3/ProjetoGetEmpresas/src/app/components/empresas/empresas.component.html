@@ -1,0 +1,9 @@
+@for(empresas of EmpresaResponse; track EmpresaResponse) {
+
+<div class=" flex flex-col justify-between p-4 leading-normal border-8">
+  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{empresas.empresa_id}}</h5>
+  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{empresas.empresa_nome}}</h5>
+  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{empresas.empresa_cnpj}}</h5>
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"></p>
+</div>
+}
