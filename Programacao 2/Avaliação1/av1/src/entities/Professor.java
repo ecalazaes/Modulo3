@@ -6,12 +6,12 @@ import java.util.List;
 public class Professor extends Pessoa {
 
     private List<DisciplinasGraduacao> disciplinaGraduacao;
-    private List<DisciplinasPosGraduacao> disciplinaPosGrduacao;
+    private List<DisciplinasPosGraduacao> disciplinaPosGraduacao;
 
     public Professor(String nome, String cpf, int matricula, String telefone, String email, String endereco) {
         super(nome, cpf, matricula, telefone, email, endereco);
         this.disciplinaGraduacao = new ArrayList<>();
-        this.disciplinaPosGrduacao = new ArrayList<>();
+        this.disciplinaPosGraduacao = new ArrayList<>();
     }
 
     public List<DisciplinasGraduacao> getDisciplinaGraduacao() {
@@ -23,19 +23,19 @@ public class Professor extends Pessoa {
     }
 
     public List<DisciplinasPosGraduacao> getDisciplinaPosGrduacao() {
-        return disciplinaPosGrduacao;
+        return disciplinaPosGraduacao;
     }
 
     public void adicionarDisciplina(DisciplinasPosGraduacao disciplina) {
-        this.disciplinaPosGrduacao.add(disciplina);
+        this.disciplinaPosGraduacao.add(disciplina);
     }
 
-    public String lancarNota(double nota, String materia, String aluno){
-        return "Foi lançada a nota " + nota + " na matéria " + materia + " para o aluno " + aluno;
+    public String lancarNota(String aluno, String  materia, double nota){
+        return "Foi lançada a nota " + nota + " na matéria " + materia + " para o aluno " + aluno + ".";
     }
 
     public String lancarFrequencia(String aluno){
-        return "Foi lançada presença para o aluno " + aluno;
+        return "Foi lançada presença para o aluno " + aluno + ".";
 
     }
 }

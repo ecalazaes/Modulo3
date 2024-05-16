@@ -4,65 +4,118 @@ import entities.DisciplinasGraduacao;
 import entities.DisciplinasPosGraduacao;
 import entities.Professor;
 
+import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Scanner;
 
 public class AppProfessor {
     public static void main(String[] args) {
 
-        // Criando Professor
-        Professor professor = new Professor("Clayton", "111111111", 789, "999999999", "clayton@gmail.com", "Rua Senac");
+        Scanner sc = new Scanner(System.in);
+        int op;
+        Professor professor = null;
 
-        // Criando matérias Graduação
-        DisciplinasGraduacao java = new DisciplinasGraduacao(1, "Java");
-        DisciplinasGraduacao python = new DisciplinasGraduacao(2, "Python");
-        DisciplinasGraduacao js = new DisciplinasGraduacao(3, "JS");
+        do {
+            System.out.println("1 - Cadastrar Professor");
+            System.out.println("9 - Sair");
+            try {
+                op = sc.nextInt();
+                sc.nextLine();
 
-        // Criando matérias PósGraduação
-        DisciplinasPosGraduacao Maven = new DisciplinasPosGraduacao(1, "Maven");
-        DisciplinasPosGraduacao Mensageria = new DisciplinasPosGraduacao(2, "Mensageria");
-        DisciplinasPosGraduacao SpringBoot = new DisciplinasPosGraduacao(3, "SpringBoot");
+                if (op == 1) {
+                    System.out.print("Informe o nome: ");
+                    String nome = sc.nextLine();
+                    System.out.print("Informe o CPF: ");
+                    String cpf = sc.nextLine();
+                    System.out.print("Informe a matricula: ");
+                    int matricula = sc.nextInt();
+                    sc.nextLine(); // Limpa o buffer do teclado
+                    System.out.print("Informe o telefone: ");
+                    String telefone = sc.nextLine();
+                    System.out.print("Informe o E-mail: ");
+                    String email = sc.nextLine();
+                    System.out.print("Informe o endereco: ");
+                    String endereco = sc.nextLine();
 
-        // Adiciona matérias que o Professor leciona de Graduação
-        professor.adicionarDisciplina(java);
-        professor.adicionarDisciplina(python);
-        professor.adicionarDisciplina(js);
 
-        // Adiciona matérias que o Professor leciona de PósGraduação
-        professor.adicionarDisciplina(Maven);
-        professor.adicionarDisciplina(Mensageria);
-        professor.adicionarDisciplina(SpringBoot);
+                    professor = new Professor(nome, cpf, matricula, telefone, email, endereco);
 
-        // Lançar Nota
-        System.out.println(professor.lancarNota(9, "Java", "Erick"));
-        System.out.println(professor.lancarNota(8, "SpringBoot", "José"));
+                    int op2;
+                    do {
+                        System.out.println();
+                        System.out.println("1 - Disciplinas de Graduação");
+                        System.out.println("2 - Disciplinas de Pós-Graduação");
+                        System.out.println("9 - Voltar");
+                        try {
+                            op2 = sc.nextInt();
+                            sc.nextLine();
 
-        System.out.println();
+                            if (op2 == 1) {
+                                System.out.println("Quantas matérias deseja cadastrar: ");
+                                int n = sc.nextInt();
+                                sc.nextLine();
 
-        // Lançar Frequencia
-        System.out.println(professor.lancarFrequencia("Erick"));
-        System.out.println(professor.lancarFrequencia("José"));
+                                for (int i = 0; i < n; i++) {
+                                    System.out.print("Informe a " + (i + 1) + "ª matéria: ");
+                                    String materia = sc.nextLine();
+                                    DisciplinasGraduacao disciplinasGraduacao = new DisciplinasGraduacao(materia);
+                                    professor.adicionarDisciplina(disciplinasGraduacao);
+                                }
+                            } else if (op2 == 2) {
+                                System.out.println("Quantas matérias deseja cadastrar: ");
+                                int n = sc.nextInt();
+                                sc.nextLine();
 
-        System.out.println();
+                                for (int i = 0; i < n; i++) {
+                                    System.out.print("Informe a " + (i + 1) + "ª matéria: ");
+                                    String materia = sc.nextLine();
+                                    DisciplinasPosGraduacao disciplinasPosGraduacao = new DisciplinasPosGraduacao(materia);
+                                    professor.adicionarDisciplina(disciplinasPosGraduacao);
+                                }
+                            } else if (op2 != 9) {
+                                System.out.println("Opção inválida, tente novamente.");
+                            }
+                        } catch (InputMismatchException e) {
+                            System.out.println("Por favor, digite um número válido.");
+                            sc.nextLine();
+                            op2 = 0;
+                        }
+                    } while (op2 != 9);
 
-        // Informações do Professor
-        System.out.println("-- Informações do Professor --");
-        System.out.println("Nome: " + professor.getNome());
-        System.out.println("CPF: " + professor.getCpf());
-        System.out.println("Matricula: " + professor.getMatricula());
-        System.out.println("Telefone: " + professor.getTelefone());
-        System.out.println("E-mail: " + professor.getEmail());
-        System.out.println("Endereço: " + professor.getEndereco());
-        System.out.println();
-        System.out.println("-- Matérias que o professor " + professor.getNome() + " leciona --");
-        System.out.println("Disciplinas Graduação:");
-        List<DisciplinasGraduacao> disciplinasGraduacao = professor.getDisciplinaGraduacao();
-        for (DisciplinasGraduacao disciplina : disciplinasGraduacao) {
-            System.out.println("- " + disciplina.getNome());
-        }
-        System.out.println("Disciplinas PósGradução:");
-        List<DisciplinasPosGraduacao> disciplinasPosGraduacao = professor.getDisciplinaPosGrduacao();
-        for (DisciplinasPosGraduacao disciplina : disciplinasPosGraduacao) {
-            System.out.println("- " + disciplina.getNome());
-        }
+
+                    System.out.println("-- Informações do Professor --");
+                    System.out.println("Nome: " + professor.getNome());
+                    System.out.println("CPF: " + professor.getCpf());
+                    System.out.println("Matricula: " + professor.getMatricula());
+                    System.out.println("Telefone: " + professor.getTelefone());
+                    System.out.println("E-mail: " + professor.getEmail());
+                    System.out.println("Endereço: " + professor.getEndereco());
+                    System.out.println();
+                    System.out.println("-- Matérias que o professor " + professor.getNome() + " leciona --");
+                    System.out.println("Disciplinas Graduação:");
+                    List<DisciplinasGraduacao> disciplinasGraduacao = professor.getDisciplinaGraduacao();
+                    for (DisciplinasGraduacao disciplina : disciplinasGraduacao) {
+                        System.out.println("- " + disciplina.getNome());
+                    }
+                    System.out.println("Disciplinas Pós-Graduação:");
+                    List<DisciplinasPosGraduacao> disciplinasPosGraduacao = professor.getDisciplinaPosGrduacao();
+                    for (DisciplinasPosGraduacao disciplina : disciplinasPosGraduacao) {
+                        System.out.println("- " + disciplina.getNome());
+                    }
+
+                } else if (op != 9) {
+                    System.out.println("Opção inválida, tente novamente");
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println("Por favor, digite um número válido.");
+                sc.nextLine();
+                op = 0;
+            }
+
+        } while (op != 9);
+
+        System.out.println("Obrigado, saindo do programa...!");
+        sc.close();
     }
 }
