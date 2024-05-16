@@ -39,8 +39,8 @@ public class AppAlunoGraduacao {
                 System.out.println("Quantas matéria deseja cadastrar: ");
                 int n = sc.nextInt();
                 sc.nextLine();
-                for (int i = 0; i < n ; i++) {
-                    System.out.print("Informe a " + (i+1) + "° matéria: ");
+                for (int i = 0; i < n; i++) {
+                    System.out.print("Informe a " + (i + 1) + "° matéria: ");
                     String materia = sc.nextLine();
                     DisciplinasGraduacao disciplinasGraduacao = new DisciplinasGraduacao(materia);
                     alunoGraduacao.adicionarDisciplina(disciplinasGraduacao);
@@ -97,7 +97,6 @@ public class AppAlunoGraduacao {
                 System.out.println("Obrigado, saindo do programa...!");
             }
         } while (op != 9);
-
         sc.close();
     }
 }
