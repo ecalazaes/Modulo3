@@ -5,6 +5,10 @@ public abstract class Disciplinas {
     protected int id;
     protected String nome;
 
+    public Disciplinas(String nome) {
+        this.nome = nome;
+    }
+
     public Disciplinas(int id, String nome) {
         this.id = id;
         this.nome = nome;
