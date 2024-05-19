@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.cor-status-verde {
+  color: #0FD22E;
+}
+
+.cor-status-vermelho {
+  color: #DB4040;
+}
+
+body {
+  background-color: #282626; 
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.bg-topo-tabela {
+  background-color: #e2e2e2;
+}
+
+.teste {
+  background-color: #dbdbdb;
+}
+
+.bg-modal {
+  background-color: #e5e5e5;
+}
