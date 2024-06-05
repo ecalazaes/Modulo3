@@ -1,0 +1,9 @@
+Testando
+a
+leitura
+de
+arquivos
+em
+java
+
+aaaaa
