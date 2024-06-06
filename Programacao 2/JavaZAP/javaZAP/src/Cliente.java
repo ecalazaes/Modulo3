@@ -63,7 +63,8 @@ public class Cliente {
 
 	private void startClient() {
 		try {
-			Socket client = new Socket("192.168.0.217", 10000);
+			String serverIP = "127.0.0.1";
+			Socket client = new Socket(serverIP, 10000);
 			chatArea.append("Cliente conectado ao servidor!\n");
 
 			Scanner serverInput = new Scanner(client.getInputStream());
