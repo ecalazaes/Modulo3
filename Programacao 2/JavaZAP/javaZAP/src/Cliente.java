@@ -63,7 +63,7 @@ public class Cliente {
 
 	private void startClient() {
 		try {
-			String serverIP = "127.0.0.1";
+			String serverIP = "10.136.64.196";
 			Socket client = new Socket(serverIP, 10000);
 			chatArea.append("Cliente conectado ao servidor!\n");
 
