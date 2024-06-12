@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 public class TestaFabricaDeConexoes {
     static Connection con;
+
     public static void main(String[] args) {
         try {
             con = ConnectionFactory.getConnection();
