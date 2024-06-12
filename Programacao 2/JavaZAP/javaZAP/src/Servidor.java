@@ -12,84 +12,96 @@ import java.util.Scanner;
 
 public class Servidor {
 
-	private JTextArea chatArea;
-	private JTextField inputField;
-	private PrintStream out;
-	private Socket client;
+	private JTextArea areaDeChat;
+	private JTextField campoDeEntrada;
+	private PrintStream saida;
+	private Socket cliente;
 
+	// Construtor do Servidor
 	public Servidor() {
-		JFrame frame = new JFrame("Servidor");
-		chatArea = new JTextArea(20, 40);
-		chatArea.setEditable(false);
-		JScrollPane chatScroll = new JScrollPane(chatArea);
-		inputField = new JTextField(30);
-		JButton sendButton = new JButton("Enviar");
+		// Configuração da janela principal
+		JFrame janela = new JFrame("Servidor");
 
-		// Adicionar funcionalidade de enviar a mensagem ao pressionar Enter
-		inputField.addKeyListener(new KeyAdapter() {
+		// Área de texto onde as mensagens serão exibidas
+		areaDeChat = new JTextArea(20, 40);
+		areaDeChat.setEditable(false);
+		JScrollPane rolagemDoChat = new JScrollPane(areaDeChat);
+
+		// Campo de texto onde o usuário digita as mensagens
+		campoDeEntrada = new JTextField(30);
+		JButton botaoEnviar = new JButton("Enviar");
+
+		// Envia a mensagem ao pressionar Enter
+		campoDeEntrada.addKeyListener(new KeyAdapter() {
 			public void keyPressed(KeyEvent e) {
 				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-					sendMessage();
+					enviarMensagem();
 				}
 			}
 		});
 
-		sendButton.addActionListener(new ActionListener() {
+		// Envia a mensagem ao clicar no botão "Enviar"
+		botaoEnviar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				sendMessage();
+				enviarMensagem();
 			}
 		});
 
-		JPanel panel = new JPanel();
-		panel.add(inputField);
-		panel.add(sendButton);
+		// Painel que contém o campo de texto e o botão de enviar
+		JPanel painel = new JPanel();
+		painel.add(campoDeEntrada);
+		painel.add(botaoEnviar);
 
-		frame.add(chatScroll, BorderLayout.CENTER);
-		frame.add(panel, BorderLayout.SOUTH);
-		frame.pack();
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
+		// Adiciona a área de texto e o painel à janela principal
+		janela.add(rolagemDoChat, BorderLayout.CENTER);
+		janela.add(painel, BorderLayout.SOUTH);
+		janela.pack();
+		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		janela.setVisible(true);
 
-		// Exibe a mensagem inicial na área de texto
-		chatArea.append("Porta 10000 aberta, aguardando uma conexão\n");
+		// Mensagem inicial na área de texto
+		areaDeChat.append("Porta 10000 aberta, aguardando uma conexão\n");
 
 		// Inicia o servidor em uma nova thread
-		new Thread(this::startServer).start();
-	}
+		new Thread(() -> {
+			try {
+				// Abre um socket na porta 10000
+				ServerSocket servidor = new ServerSocket(10000);
+				cliente = servidor.accept();
+				areaDeChat.append("Conexão do cliente " + cliente.getInetAddress().getHostAddress() + "\n");
 
-	private void sendMessage() {
-		String message = inputField.getText();
-		if (message != null && !message.isEmpty()) {
-			out.println(message);
-			chatArea.append("Servidor: " + message + "\n");
-			inputField.setText("");
-		}
-	}
+				// Scanner para ler as mensagens do cliente
+				Scanner entradaDoCliente = new Scanner(cliente.getInputStream());
+				saida = new PrintStream(cliente.getOutputStream());
 
-	private void startServer() {
-		try {
-			ServerSocket server = new ServerSocket(10000);
-			client = server.accept();
-			chatArea.append("Conexão do cliente " + client.getInetAddress().getHostAddress() + "\n");
+				// Lê e exibe as mensagens do cliente
+				while (entradaDoCliente.hasNextLine()) {
+					String mensagem = entradaDoCliente.nextLine();
+					areaDeChat.append("Cliente: " + mensagem + "\n");
+				}
 
-			Scanner clientInput = new Scanner(client.getInputStream());
-			out = new PrintStream(client.getOutputStream());
-
-			while (clientInput.hasNextLine()) {
-				String message = clientInput.nextLine();
-				chatArea.append("Cliente: " + message + "\n");
+				// Fecha os recursos
+				entradaDoCliente.close();
+				cliente.close();
+				servidor.close();
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
+		}).start();
+	}
 
-			clientInput.close();
-			client.close();
-			server.close();
-		} catch (IOException e) {
-			e.printStackTrace();
+	// Método para enviar mensagens
+	private void enviarMensagem() {
+		String mensagem = campoDeEntrada.getText();
+		if (mensagem != null && !mensagem.isEmpty()) {
+			saida.println(mensagem);
+			areaDeChat.append("Servidor: " + mensagem + "\n");
+			campoDeEntrada.setText("");
 		}
 	}
 
 	public static void main(String[] args) {
-		SwingUtilities.invokeLater(Servidor::new);
+		new Servidor();
 	}
 }
