@@ -61,7 +61,7 @@ public class Cliente {
 
         // Conecta ao servidor e inicia a comunicação
         try {
-            String enderecoServidor = "127.0.0.1";
+            String enderecoServidor = "10.136.64.224";
             Socket cliente = new Socket(enderecoServidor, 10000);
             areaDeChat.append("Cliente conectado ao servidor!\n");
 
