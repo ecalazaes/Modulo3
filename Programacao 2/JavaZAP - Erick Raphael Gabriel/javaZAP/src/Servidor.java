@@ -19,6 +19,7 @@ public class Servidor {
 
     // Construtor do Servidor
     public Servidor() {
+
         // Configuração da janela principal
         JFrame janela = new JFrame("Servidor");
 

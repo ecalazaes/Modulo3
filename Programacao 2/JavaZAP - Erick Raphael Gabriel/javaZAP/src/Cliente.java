@@ -17,6 +17,7 @@ public class Cliente {
 
     // Construtor do Cliente
     public Cliente() {
+
         // Configuração da janela principal
         JFrame janela = new JFrame("Cliente");
 
