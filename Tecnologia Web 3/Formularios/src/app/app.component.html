@@ -1,0 +1,12 @@
+<form [formGroup]="empresaForm" (ngSubmit)="onSubmit()">
+
+  <label for="empresa_nome">Nome: </label>
+  <input type="text" formControlName="empresa_nome"><br/>
+
+  <label for="empresa_cnpj">Cnpj: </label>
+  <input type="text" formControlName="empresa_cnpj"><br><br>
+
+  <button type="submit" [disabled]="!empresaForm.valid">Gravar</button>
+</form>
+
+<router-outlet />
