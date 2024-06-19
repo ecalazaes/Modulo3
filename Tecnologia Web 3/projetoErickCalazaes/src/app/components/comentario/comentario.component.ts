@@ -14,6 +14,7 @@ export class ComentarioComponent implements OnInit {
   comentarios: Comentario[] = [];
 
   constructor(private comentarioService: ComentarioService){}
+  
   ngOnInit(): void {
     this.getComentarios();
   }
