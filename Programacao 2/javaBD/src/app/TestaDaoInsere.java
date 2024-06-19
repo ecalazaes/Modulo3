@@ -9,6 +9,7 @@ public class TestaDaoInsere {
     public static void main(String[] args) {
 
         Contato contato = new Contato();
+
         contato.setNome("Ronaldo");
         contato.setEmail("Fuzipa@hotmail.com");
         contato.setEndereco("Rua Geovani de Castro, 90");
