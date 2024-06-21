@@ -36,14 +36,12 @@ public class TesteDaoDeleteById {
         }
 
         if (contatos != null && !contatos.isEmpty()) {
-            contato = contatos.get(0);
-            for (Contato teste : contatos) {
+            for (Contato contatoDeletar : contatos) {
                 System.out.println();
                 System.out.println("====================================================");
-                System.out.println("ID: " + teste.getId());
-                System.out.println("Nome: " + teste.getNome());
-                System.out.println("Email: " + teste.getEmail());
-                System.out.println("Endereço: " + teste.getEndereco());
+                System.out.println("Nome: " + contatoDeletar.getNome());
+                System.out.println("Email: " + contatoDeletar.getEmail());
+                System.out.println("Endereço: " + contatoDeletar.getEndereco());
                 System.out.println("====================================================");
                 System.out.println();
             }

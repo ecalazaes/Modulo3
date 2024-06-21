@@ -38,7 +38,6 @@ public class TestaDaoUpdateById {
             for (Contato contato : contatos) {
                 System.out.println();
                 System.out.println("====================================================");
-                System.out.println("ID: " + contato.getId());
                 System.out.println("Nome: " + contato.getNome());
                 System.out.println("Email: " + contato.getEmail());
                 System.out.println("Endereço: " + contato.getEndereco());
