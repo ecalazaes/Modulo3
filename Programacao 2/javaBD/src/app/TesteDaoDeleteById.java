@@ -14,9 +14,19 @@ public class TesteDaoDeleteById {
         Scanner sc = new Scanner(System.in);
         List<Contato> contatos = null;
         Contato contato = null;
+        int id = -1;
 
-        System.out.print("Qual ID deseja deletar? ");
-        int id = Integer.parseInt(sc.nextLine());
+        while (true) {
+            System.out.print("Qual ID deseja deletar? ");
+            String opcao = sc.nextLine();
+
+            if (opcao.matches("\\d+")) {
+                id = Integer.parseInt(opcao);
+                break;
+            } else {
+                System.out.println("Por favor, digite um número válido.");
+            }
+        }
 
         try {
             ContatoDao dao = new ContatoDao();
@@ -30,6 +40,7 @@ public class TesteDaoDeleteById {
             for (Contato teste : contatos) {
                 System.out.println();
                 System.out.println("====================================================");
+                System.out.println("ID: " + teste.getId());
                 System.out.println("Nome: " + teste.getNome());
                 System.out.println("Email: " + teste.getEmail());
                 System.out.println("Endereço: " + teste.getEndereco());
@@ -37,7 +48,7 @@ public class TesteDaoDeleteById {
                 System.out.println();
             }
 
-            System.out.print("Deseja deletar este contato (S/N) ? ");
+            System.out.print("Deseja deletar este contato (S/N)? ");
             char op = sc.nextLine().toUpperCase().charAt(0);
             if (op == 'S') {
                 try {
@@ -48,12 +59,12 @@ public class TesteDaoDeleteById {
                     e.printStackTrace();
                 }
             } else {
-                System.out.println("Ok, não vamos deletar o contato!");
+                System.out.println("Ok, não vamos deletar o contato.");
             }
         } else {
             System.out.println("Contato não encontrado!");
-
         }
+
         retornarMenuPrincipal();
         sc.close();
     }
