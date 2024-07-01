@@ -28,6 +28,4 @@ export class DisciplinaComponent implements OnInit {
       error: (error) => console.log(error),
     });
   }
-
-
 }
