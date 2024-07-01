@@ -1,0 +1,11 @@
+
+<label for="buscar">Buscar: </label>
+<input id="buscar" type="text" [formControl]="buscarEmpresa">
+<button type="button" (click)="getEmpresaPorId()" >Buscar</button>
+<br/><br/>
+<form [formGroup]="empresaForm" (ngSubmit)="onSubmit()">
+  <input type="number" formControlName="empresa_id"><br/>
+  <input type="text" formControlName="empresa_nome"><br/>
+  <input type="text" formControlName="empresa_cnpj">
+  <button type="submit" [disabled]="!empresaForm.valid">Gravar</button>
+</form>

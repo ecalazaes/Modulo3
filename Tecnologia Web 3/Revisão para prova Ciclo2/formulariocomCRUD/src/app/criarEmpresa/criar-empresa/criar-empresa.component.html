@@ -1,0 +1,5 @@
+<form [formGroup]="empresaForm" (ngSubmit)="onSubmit()">
+  <input type="text" formControlName="empresa_nome"><br/>
+  <input type="text" formControlName="empresa_cnpj">
+  <button type="submit" [disabled]="!empresaForm.valid">Gravar</button>
+</form>
