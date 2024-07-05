@@ -2,7 +2,7 @@ import pandas as pd
 from tabulate import tabulate
 
 # Ler o arquivo .csv
-df = pd.read_csv('C:/Users/lekiz/OneDrive/Documentos/Estudos/Módulo 3/Probabilidade e Estatística/Estudo de Base/base.csv')
+df = pd.read_csv('base.csv')
 
 # Remover linhas com qualquer dado nulo
 df = df.dropna()

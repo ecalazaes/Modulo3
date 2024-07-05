@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from tabulate import tabulate
 
 # Ler o arquivo .csv
-df = pd.read_csv('C:/Users/lekiz/OneDrive/Documentos/Estudos/Módulo 3/Probabilidade e Estatística/Estudo de Base/base.csv')
+df = pd.read_csv('base.csv')
 
 # Remover linhas com qualquer dado nulo
 df = df.dropna()
@@ -48,7 +48,7 @@ plt.figure(figsize=(12, 8))
 bars = plt.bar(grouped_df['Família'], grouped_df['Valor da Receita Tributária'], color='skyblue')
 plt.xlabel('Tributos sobre a Folha de Salários')
 plt.ylabel('Valor da Receita Tributária (em bilhões)')
-plt.title('Gastos totais Consolidados do Maior para o Menor - de 2002 a 2021')
+plt.title('Arrecadação totais Consolidados do Maior para o Menor - de 2002 a 2021')
 plt.xticks(rotation=45, ha='right')
 
 # Adicionar rótulos de valores acima das barras
